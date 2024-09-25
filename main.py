@@ -47,6 +47,13 @@ def main():
             if collision_check:
                 print("Game over!")
                 return
+            
+        for asteroid in asteroid_group:
+            for shot in shot_group:
+                shot_asteroid_collision_check = CircleShape.check_collisions(asteroid, shot)
+                if shot_asteroid_collision_check:
+                   asteroid.kill()
+                   shot.kill()
 
 
       
