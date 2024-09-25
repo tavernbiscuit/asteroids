@@ -50,9 +50,11 @@ def main():
             
         for asteroid in asteroid_group:
             for shot in shot_group:
-                shot_asteroid_collision_check = CircleShape.check_collisions(asteroid, shot)
+                shot_asteroid_collision_check = (
+                    CircleShape.check_collisions(asteroid, shot)
+                )
                 if shot_asteroid_collision_check:
-                   asteroid.kill()
+                   asteroid.split()
                    shot.kill()
 
 
